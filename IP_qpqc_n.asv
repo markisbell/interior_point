@@ -4,8 +4,8 @@
 % 
 % ToDo:
 %      - Debug Informationen einfuegen, je nachdem wie hoch die Verbositaet ist
-%       - Chek if the problem is infeasible from the beginning or during
-%       solution
+%      - Ausgabe des Loesungsvorgangs, um zu erkennen wo und warum das
+%      Optimierungssproblem sich nicht loesen laesst
 %      - Visualisierung des Optimierungsproblems
 %
 % Markus Bell 30.12.2021
@@ -27,7 +27,7 @@
 %                               x'*Aquad*x + lquad'*x <= rquad
 %
 % The Solution of the perturbed KKT equations is performed with a standard
-% newton method with centering
+% newton method
 %
 %--------------------------METHOD DESCRIPTION END--------------------------
 %
@@ -326,6 +326,7 @@ function ip_result = IP_qpqc_n(optimmodel,options)
         %Debug output in the command window ?
         %=======================================================================
  
+        
         %Determine the value of the final step
         xk = xk + gamma*hk*Delta_xk;
         lambdak = lambdak + gamma*hk*Delta_lambdak;
