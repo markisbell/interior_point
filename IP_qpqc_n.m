@@ -29,6 +29,25 @@
 % The Solution of the perturbed KKT equations is performed with a standard
 % newton method with centering
 %
+%-------Options for the optimization problem-------------------------------
+% options.x0 = []; %Intial value --> Staring point for the algorithm
+% options.iter_max = 35; %Maximum number of iterations of the newton algorithm 
+% options.centering = 0.15; %Centering parameter in [0,...,1], if 0 --> Newton step, if 1 fully centered 
+% options.eps_prim = 1e-9; %Primal optimality indicator --> How close such the equality constraitns be met
+% options.eps_dual = 1e-9; %Dual optimality inidicator --> How good should the 
+% options.eps_gap = 1e-5; %Duality gap --> There is only one possible pair of primal and dual optimality
+% 
+%-------Exemplary definitions of the optimization model--------------------------------------
+% optimmodel.H = H; %Quadratic part of the cost function
+% optimmodel.f = f; %Linear part of the cost function
+% optimmodel.Ainequ = Ainequ; %State matrix for the inequality constraints
+% optimmodel.Binequ = Binequ; %Output matrix for the inequality constraints
+% optimmodel.Aequ = Aequ; %State matrix for the equality constraints
+% optimmodel.Bequ = Bequ; %Output matrix for the equality constraints
+% optimmodel.Aquad = Aquad; %Quatrtaic state matrix xT*Aquad*x
+% optimmodel.lquad = lquad; %linear state matrix xT*lquad
+% optimmodel.rquad = rquad; %Output matrix matri
+%
 %--------------------------METHOD DESCRIPTION END--------------------------
 %
 %##########################################################################
